@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burhan U Din Peerzada - Portfolio</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #141E30, #243B55);
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        .menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        .menu li {
+            margin: 0 15px;
+        }
+        .menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .menu li a:hover, .menu li a.active {
+            color: #1abc9c;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        section {
+            padding: 100px 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h2 {
+            color: #1abc9c;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 15px;
+            background: #1abc9c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #16a085;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+                position: absolute;
+                background: rgba(0, 0, 0, 0.9);
+                top: 60px;
+                left: 0;
+            }
+            .menu li {
+                margin: 15px 0;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul class="menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="hero">
+        <h1>Burhan U Din Peerzada</h1>
+        <p>Business Analytics & Information Systems Student | Tech Enthusiast</p>
+        <a href="#contact" class="btn">Contact Me</a>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a sophomore at the University of South Florida pursuing a Bachelor's in Business Analytics & Information Systems with a GPA of 3.93. Passionate about technology, data analysis, and digital marketing, I have experience in IT support, social media management, and event coordination.</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <p><strong>University of South Florida, Tampa, FL</strong></p>
+        <p>Bachelor of Science, Business Analytics & Information Systems</p>
+        <p>GPA: 3.93 | Expected Graduation: December 2027</p>
+    </section>
+
+    <section id="experience">
+        <h2>Work Experience</h2>
+        <ul>
+            <li>
+                <h3>Social Media Intern - Wyath Inc.</h3>
+                <p>Dec 2024 – Jan 2025 (Remote, US)</p>
+                <p>Developed social media content to help underprivileged students apply to study abroad.</p>
+            </li>
+            <li>
+                <h3>IT Support Assistant - Acme Solutions</h3>
+                <p>Jun 2024 – Aug 2024 (Remote, India)</p>
+                <p>Provided remote IT support for schools using CRM systems, troubleshooting software issues.</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:bpeerzada@usf.edu">bpeerzada@usf.edu</a></p>
+        <p>Phone: (813) 597-1865</p>
+        <p>Location: Tampa, FL</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/" target="_blank">LinkedIn Profile</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Burhan U Din Peerzada. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector(".menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll("nav ul li a").forEach(anchor => {
+                anchor.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute("href"));
+                    window.scrollTo({
+                        top: target.offsetTop - 50,
+                        behavior: "smooth"
+                    });
+                    document.querySelector(".menu").style.display = "none";
+                });
+            });
+        });
+    </script>
+</body>
+</html>
